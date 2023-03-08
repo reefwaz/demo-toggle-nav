@@ -2,3 +2,91 @@ body {
     background-color: #192f5e;
     font-family: sans-serif;
 }
+
+.inner-container {
+   max-width: 75rem;
+   margin: 0 auto;
+   padding: 0 1rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: #fff;
+    padding: 2rem 0;
+}
+
+.menu a {
+    color: #3f3f3f;
+    text-decoration: none;
+    display: block;
+}
+
+.menu a:hover,
+.menu a:active {
+    background-color: gainsboro;
+    border-radius: 4px;
+}
+
+.menu li {
+    line-height: 40px;
+    text-align: center;
+}
+
+button {
+    border: none;
+    background-color: #fff;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+header nav {
+    /* style this so it overlaps the main content */
+    /* Add in left and top values. Left: 0 top (height of the header) */
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    width: 100vw;
+    max-height: 0;
+    top: 110px;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+}
+
+.show-nav {
+    max-height: 225px;
+}
+
+@media screen and (min-width: 700px) {
+    .inner-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .toggle {
+        display: none;
+    }    
+
+    header nav {
+        max-height: 200px;
+        width: unset;
+        overflow: visible;
+        position: static;
+    }
+
+    ul.menu {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .menu a {
+        padding: 0 0.75rem;
+    }
+}
